@@ -78,6 +78,102 @@ public class Main {
         //-----------------------------------------
         String[] par = new String[]{"Es", "ist", "Pausenzeit"};
         Main.myToString(par);
+
+        String[] bibliothek = new String[5];
+        bibliothek[0] = "Buch 1";
+        bibliothek[1] = "Buch 2";
+        bibliothek[2] = "Buch 3";
+        bibliothek[3] = "Buch 4";
+        //nach 1 Monat
+        bibliothek[4] = "Buch 5";
+        System.out.println(Arrays.toString(bibliothek));
+        //+ 1 Monat
+        String[] bibliothek2 = new String[6];
+        bibliothek2[0] = bibliothek[0];
+        bibliothek2[1] = bibliothek[1];
+        bibliothek2[2] = bibliothek[2];
+        bibliothek2[3] = bibliothek[3];
+        bibliothek2[4] = bibliothek[4];
+        bibliothek2[5] = null;
+        System.out.println("bibliothek2: "+Arrays.toString(bibliothek2));
+
+        //Copy
+        String[] bibliothek3 = bibliothek2;
+        System.out.println("bibliothek3: "+Arrays.toString(bibliothek3));
+
+        bibliothek2[2] = "Buch ist verscholen";
+        bibliothek3[4] = "Buch ist verscholen";
+        System.out.println("bibliothek3: "+Arrays.toString(bibliothek3));
+        System.out.println("bibliothek2: "+Arrays.toString(bibliothek2));
+        System.out.println("=========================================");
+        System.out.println(bibliothek2);
+        System.out.println(bibliothek3);
+        System.out.println(bibliothek2.equals(bibliothek3));
+        System.out.println("=========================================");
+        //neues Buch
+        bibliothek3[5] = "Harry Poter";
+        System.out.println("bibliothek3: "+Arrays.toString(bibliothek3));
+        System.out.println("bibliothek2: "+Arrays.toString(bibliothek2));
+        System.out.println("=========================================");
+        //clone
+        String[] bibliothek4 = Arrays.copyOf(bibliothek3, 10);
+        System.out.println("bibliothek4: "+Arrays.toString(bibliothek4));
+        bibliothek3[0] = "Meteor";
+        System.out.println("=========================================");
+        System.out.println("bibliothek4: "+Arrays.toString(bibliothek4));
+        System.out.println("bibliothek3: "+Arrays.toString(bibliothek3));
+        System.out.println("bibliothek2: "+Arrays.toString(bibliothek2));
+        System.out.println(bibliothek3.equals(bibliothek4));
+
+
+        //SORT
+        System.out.println("=========================================");
+        System.out.println("=========================================");
+        int[] sortiere = new int[]{10, 20,3, 99, 44, 4,1,0 ,-1000};
+        Arrays.sort(sortiere);
+        System.out.println(Arrays.toString(sortiere));
+        char[] sortiereChars = new char[]{'b', 'c','z','a','y'};
+        Arrays.sort(sortiereChars);
+        System.out.println(Arrays.toString(sortiereChars));
+        String text = "Buch ist verscholen";
+        char[] textArray = text.toCharArray();
+        Arrays.sort(textArray);
+        System.out.println(textArray);
+        System.out.println("=========================================");
+        System.out.println((int)'B');
+        System.out.println((int)'b');
+        System.out.println((int)' ');
+        System.out.println((int)'-');
+
+        //Sortiere selber
+        int[] sortiereSelber = {3, 10, 5, 1};
+        System.out.println(Arrays.toString(sortiereSelber));
+        int[] sortiert = new int[sortiereSelber.length];
+        sortiert[0] = sortiereSelber[3];
+        sortiert[1] = sortiereSelber[0];
+        sortiert[2] = sortiereSelber[2];
+        sortiert[3] = sortiereSelber[1];
+        System.out.println(Arrays.toString(sortiert));
+        //Fun Frage
+        sortiereSelber[1] = 666;
+        System.out.println(Arrays.toString(sortiereSelber));
+        System.out.println(Arrays.toString(sortiert));
+
+        String t1 = new String("blabla");
+        String t2 = t1;
+        System.out.println(t1);
+        System.out.println(t2);
+        System.out.println(t1.equals(t2));
+        t2 = "hello";
+        System.out.println(t1);
+        System.out.println(t2);
+        String t3 = new String(t1.toCharArray());
+        System.out.println(t1.equals(t3));
+        System.out.println(t1);
+        System.out.println(t3);
+
+        System.out.println(t1.hashCode());
+        System.out.println(t3.hashCode());
     }
 
     /**
