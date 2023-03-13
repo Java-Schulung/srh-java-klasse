@@ -174,6 +174,59 @@ public class Main {
 
         System.out.println(t1.hashCode());
         System.out.println(t3.hashCode());
+
+        //double array - Zweidimensionales Array
+        Integer[][] doubleArray = new Integer[4][5];
+        /*
+       0 1   1   1   1   1
+       1 2   2   2   2   2
+       2 3   3   3   3   3
+       3 4   4   4   4   4
+        */
+        doubleArray[1][3] = new Long(100000000000000000L).intValue();
+        System.out.println(doubleArray[1][3]);
+        System.out.println(doubleArray[3][3]);
+
+        Integer z1 = 1;
+        Integer z2 = 1;
+        System.out.println(z1 == z2);
+        System.out.println(z1.intValue() == z2.intValue());
+        System.out.println(doubleArray[1][3]);
+        System.out.println(doubleArray[1][3].doubleValue());
+        System.out.println(doubleArray[1][3].longValue());
+        System.out.println(doubleArray[1][3] == 666);
+
+        int index = 0;
+        String[][] bib = new String[3][5];
+        //buch #1
+        bib[0][0] = String.valueOf(++index);
+        bib[0][1] = "Harry Potter";
+        bib[0][2] = "Stein der Weisen";
+        bib[0][3] = "2000";
+        bib[0][4] = "J. Rolling";
+        String buch1 = String.format("| %s | %s | %s | %s |", bib[0]);
+
+        //buch #2
+        bib[1][0] = String.valueOf(++index);
+        bib[1][1] = "Harry Potter";
+        bib[1][2] = "Kamer der Schreckens";
+        bib[1][3] = "2001";
+        bib[1][4] = "J. Rolling";
+        String buch2 = String.format("| %s | %s | %s | %s |", bib[1]);
+
+        //buch #3
+        bib[2][0] = String.valueOf(++index);
+        bib[2][1] = "Harry Potter";
+        bib[2][2] = "Der Gefangene von Askaban";
+        bib[2][3] = "2003";
+        bib[2][4] = "J. Rolling";
+        String buch3 = String.format("| %s | %s | %s | %s |", bib[2]);
+
+        String header = String.format("| Index | Buch | Titel | Jahr | Author |");
+        System.out.println(header);
+        System.out.println(buch1);
+        System.out.println(buch2);
+        System.out.println(buch3);
     }
 
     /**
