@@ -1,6 +1,38 @@
 import java.util.ArrayList;
 
 public class MyList {
+    /**
+     * Vorgabe max. 30 Schueler
+     */
+    private String[] klassenList = new String[30];
+    /**
+     * Hilft uns das letzte Element in der Klassenliste zu indentifizieren
+     */
+    private int lastIndex = -1;
+
+    public MyList() {
+        this.klassenList[0] = "Yuriy";
+    }
+
+    public void add(String name) {
+
+    }
+
+    @Override
+    public String toString(){
+        String output = "";
+        //formatting
+        for(int i = 0; i < this.klassenList.length; i++) {
+            String schueler = this.klassenList[i];
+            if(schueler != null && !schueler.isBlank()) {
+                output += schueler;
+                if(i != this.klassenList.length) {
+                    output += ", ";
+                }
+            }
+        }
+        return "[" + output + "]";
+    }
 
 
     public static void main(String[] args) {
@@ -56,6 +88,7 @@ public class MyList {
 
         //String[]
         MyList klasse = new MyList();
+        System.out.println(klasse);
         //Fügt einen Schueler zu der Klasse hinzu
         klasse.add("Yuriy");
         klasse.add("Marce");
@@ -68,17 +101,22 @@ public class MyList {
          */
         //Gibt uns die Liste der Schueler in Textform aus
         System.out.println(klasse);
+
         //Löscht einen Schueler raus anhand der ID
         String schuelerName = klasse.remove(0);
         System.out.println(schuelerName);
+
         //Entfern angegeben Schueler aus der Klasse
         boolean isRemoved = klasse.remove("Rafael");
         System.out.println(isRemoved);
+
         //Aktualisiert den Name der Schuler
         klasse.set(0, "Marcel");
         System.out.println(klasse);
+
         //Gibt die Anzahl der Schueler in der Klasse aus
         System.out.println(klasse.size());
+
         //Gibt true wenn der Schueler existiert, false wenn nicht
         System.out.println(klasse.contains("Pascal"));
         System.out.println(klasse.contains("Yuriy"));
