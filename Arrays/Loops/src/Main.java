@@ -132,5 +132,17 @@ public class Main {
         for(float i : new int[]{1,435,4,46,56,57,8,68,68,68}) {
             System.out.println(i);
         }
+
+        /*
+        int[] bla = new int[0];
+        bla[0] = 1;
+        System.out.println(bla[0]);
+        */
+        System.out.println("===================================");
+        System.out.println("Reverse");
+        System.out.println("===================================");
+        for(int i = bib.length-1; i >= 0; i--){
+            System.out.println(Arrays.toString(bib[i]));
+        }
     }
 }
